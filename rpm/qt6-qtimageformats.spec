@@ -57,7 +57,6 @@ rm -rv src/3rdparty
 %{_qt6_plugindir}/imageformats/libqtiff.so
 %{_qt6_plugindir}/imageformats/libqwbmp.so
 %{_qt6_plugindir}/imageformats/libqicns.so
-%{_qt6_plugindir}/imageformats/libqjp2.so
 %{_qt6_plugindir}/imageformats/libqwebp.so
 %{_qt6_libdir}/cmake/Qt6/*.cmake
 %{_qt6_libdir}/cmake/Qt6Gui/*.cmake
