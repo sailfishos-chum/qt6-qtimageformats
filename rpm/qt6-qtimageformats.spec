@@ -16,7 +16,6 @@ BuildRequires: qt6-qtbase-devel >= %{qt_version}
 BuildRequires: qt6-qtbase-private-devel
 %{?_qt6:Requires: %{_qt6}%{?_isa} = %{_qt6_version}}
 BuildRequires: libtiff-devel
-BuildRequires: jasper-devel
 BuildRequires: pkgconfig(libmng)
 BuildRequires: pkgconfig(libwebp)
 
@@ -39,6 +38,7 @@ rm -rv src/3rdparty
 
 %build
 %cmake_qt6 -DQT_FEATURE_mng=ON \
+           -DQT_FEATURE_jasper=OFF \
     -DQT_BUILD_EXAMPLES:BOOL=OFF \
     -DQT_INSTALL_EXAMPLES_SOURCES=OFF
 
