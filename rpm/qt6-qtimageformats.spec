@@ -31,7 +31,7 @@ MNG, TGA, TIFF, WBMP.
 
 
 %prep
-%autosetup -n %{qt_module}-everywhere-src-%{qt_version}%{?unstable:-%{prerelease}} -p1
+%autosetup -n %{name}-%{version}/upstream -p1
 
 rm -rv src/3rdparty
 
