@@ -18,6 +18,7 @@ BuildRequires: qt6-qtbase-private-devel
 BuildRequires: libtiff-devel
 BuildRequires: pkgconfig(libmng)
 BuildRequires: pkgconfig(libwebp)
+BuildRequires: pkgconfig(libtiff-4)
 
 # filter plugin provides
 %global __provides_exclude_from ^%{_qt6_plugindir}/.*\\.so$
@@ -37,10 +38,14 @@ rm -rv src/3rdparty
 
 
 %build
-%cmake_qt6 -DQT_FEATURE_mng=ON \
+%cmake_qt6 \
+           -DQT_BUILD_EXAMPLES:BOOL=OFF \
+           -DQT_INSTALL_EXAMPLES_SOURCES=OFF \
+           -DQT_FEATURE_mng=ON \
            -DQT_FEATURE_jasper=OFF \
-    -DQT_BUILD_EXAMPLES:BOOL=OFF \
-    -DQT_INSTALL_EXAMPLES_SOURCES=OFF
+           -DQT_FEATURE_system_tiff=ON \
+           -DQT_FEATURE_system_webp=ON \
+           %{nil}
 
 %cmake_build
 
